@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">Sledilnik</a>
+    <button class="navbar-toggler" (click)="navbar_hidden=!navbar_hidden">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse" [hidden]="navbar_hidden">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="upravljanje">Upravljanje</a>
+      </div>
+    </div>
+  </div>
+</nav>

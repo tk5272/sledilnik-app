@@ -1,0 +1,68 @@
+
+<div *ngFor="let soba of sobe" class="container main">
+<div class="row">
+    <div class="col-sm-5">
+        <h3>{{soba.imeSobe}}</h3>
+    </div>
+    <div class="col-sm-2">
+        <p>{{soba.osebe.ime}} {{soba.osebe.priimek}}</p>
+    </div>
+    <div class="col-sm-5">
+        <div class="row">
+        <div class="col">
+            <span>{{soba.stLjudi}} / {{soba.maxLjudi}}</span>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="dodajOsebo(soba.sobaId, true)">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-warning" (click)="dodajOsebo(soba.sobaId, false)">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="btn btn-danger" (click)="deleteSoba(soba.sobaId)">
+                <i class="far fa-times-circle"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+<hr>
+</div>
+<div *ngIf="sporocilo" class="alert alert-info" role="alert">
+    <span class="btn" (click)="sporocilo=''">&times; <strong>{{sporocilo}}</strong></span>
+</div>
+<div class="container">
+    <div class="row">
+        <h3>Dodaj sobo</h3>
+        <form (ngSubmit)="createSoba()">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <input class="form-control" [(ngModel)]="novaSoba.imeSobe" name="imeSobe" placeholder="Ime sobe">
+                </div>
+                <div class="form-group col-md-6">
+                <input class="form-control" [(ngModel)]="novaSoba.kljucnaBeseda" name="kljucnaBeseda" placeholder="Kljucna beseda v anglescini">
+            </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                <input class="form-control" [(ngModel)]="novaSoba.stLjudi" name="stLjudi" placeholder="st. ljudi">
+                </div>
+                <div class="form-group col-md-6">
+                <input class="form-control" [(ngModel)]="novaSoba.maxLjudi" name="maxLjudi" placeholder="max ljudi">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                <input class="form-control" [(ngModel)]="novaSoba.velikost" name="velikost" placeholder="velikost">
+                </div>
+                <div class="form-group col-md-6">
+                    <select class="form-control" [(ngModel)]="novaSoba.osebe" name="osebe">
+                        <option *ngFor="let oseba of osebje" [ngValue] = "oseba">{{oseba.ime}} {{oseba.priimek}}</option>
+                    </select>
+                </div>
+            </div>
+            <input type="textarea" class="form-control" [(ngModel)]="novaSoba.opis" name="opis" placeholder="kratek opis">
+            <button type="submit" class="btn btn-primary">Dodaj sobo</button>
+        </form>
+    </div>
+</div>

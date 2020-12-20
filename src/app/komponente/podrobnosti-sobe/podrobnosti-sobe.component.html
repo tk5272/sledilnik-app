@@ -1,0 +1,14 @@
+<div class="main">
+    <h1><i>{{soba.imeSobe}}</i></h1>
+    <p>{{soba.opis}}</p>
+</div>
+<div class="container">
+    <hr>
+    <p>
+        <strong>zasedenost:</strong> {{soba.stLjudi}} / {{soba.maxLjudi}}<br>
+        <strong>velikost:</strong> {{soba.velikost}} kvadratnih metrov<br>
+        <strong>danes z vami:</strong> {{soba.osebe.ime}} {{soba.osebe.priimek}}
+    </p>
+    <hr>
+    <app-slike-sob [keyword]=soba.kljucnaBeseda></app-slike-sob>
+</div>

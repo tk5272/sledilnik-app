@@ -1,0 +1,17 @@
+.poln {
+    padding:5px;
+    border-radius: 4px;
+    margin-top: 3px;
+    border: 3px red solid;
+    background-color: rgba(255, 0, 0, 0.3);
+    
+}
+
+.prazen {
+    padding:5px;
+    border-radius: 4px;
+    margin-top: 3px;
+    border: 3px green solid;
+    background-color: rgba(0, 255, 0, 0.3);
+
+}

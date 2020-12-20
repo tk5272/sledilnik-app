@@ -1,0 +1,17 @@
+<div class="container" id="main" *ngFor="let soba of sobe" [ngClass]="{
+    'poln' : (soba.maxLjudi <= soba.stLjudi),
+    'prazen' : (soba.maxLjudi > soba.stLjudi)
+}">
+<div class="row">
+    <div class="col">
+        <h3><strong>{{soba.imeSobe}}</strong></h3>
+    </div>
+    <div class="col">
+        <p>{{soba.opis}}</p>
+    </div>
+    <div class="col" style="text-align: end;">
+        <a class="btn btn-outline-dark" routerLink="sobe/{{soba.sobaId}}"
+        >Podrobnosti</a>
+    </div>
+</div>
+</div>
